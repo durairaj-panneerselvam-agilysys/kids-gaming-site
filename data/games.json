@@ -1,0 +1,31 @@
+{
+  "siteTitle": "Kids Gaming Site",
+  "tagline": "Fun & Learning for Kids!",
+  "countdownTarget": "2025-12-31T23:59:59Z",
+  "games": [
+    {
+      "id": 1,
+      "name": "Math Whiz",
+      "description": "Sharpen your math skills with fun puzzles!",
+      "thumb": "assets/images/math-whiz.png",
+      "difficulty": "Easy",
+      "url": "https://example.com/math-whiz"
+    },
+    {
+      "id": 2,
+      "name": "Word Explorer",
+      "description": "Expand your vocabulary in this word adventure.",
+      "thumb": "assets/images/word-explorer.png",
+      "difficulty": "Medium",
+      "url": "https://example.com/word-explorer"
+    },
+    {
+      "id": 3,
+      "name": "Logic Quest",
+      "description": "Challenge your brain with logic puzzles!",
+      "thumb": "assets/images/logic-quest.png",
+      "difficulty": "Hard",
+      "url": "https://example.com/logic-quest"
+    }
+  ]
+}

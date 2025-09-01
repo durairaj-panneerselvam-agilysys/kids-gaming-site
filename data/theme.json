@@ -1,0 +1,10 @@
+{
+  "colors": {
+    "primary": "#FFDF00",
+    "secondary": "#004040",
+    "bg": "#fffbe6",
+    "text": "#222",
+    "accent": "#ff9800"
+  },
+  "font": "'Comic Sans MS', 'Comic Sans', cursive"
+}

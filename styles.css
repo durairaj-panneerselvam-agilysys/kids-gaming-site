@@ -1,0 +1,116 @@
+/* Base Theme Variables */
+:root {
+  --primary: #FFDF00;
+  --secondary: #004040;
+  --bg: #fffbe6;
+  --text: #222;
+  --accent: #ff9800;
+  --font: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: var(--primary);
+  padding: 1rem;
+  border-bottom: 4px solid var(--secondary);
+}
+
+#site-logo {
+  height: 60px;
+  margin-right: 1rem;
+  border-radius: 12px;
+}
+
+#site-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+#hero {
+  background: var(--accent);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: 16px;
+  margin: 1rem;
+}
+
+#games-list {
+  margin: 2rem 1rem;
+}
+
+#games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.game-card {
+  background: #fff;
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: transform 0.2s;
+}
+
+.game-card:hover {
+  transform: scale(1.04);
+  border-color: var(--accent);
+}
+
+#countdown {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+footer {
+  background: var(--secondary);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+#contact-info a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+#social-links img {
+  width: 32px;
+  height: 32px;
+  margin: 0 0.5rem;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  #site-logo {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* TODO: student exercise - Add focus states and transitions */
