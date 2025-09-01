@@ -5,6 +5,7 @@ async function loadData() {
     fetch('data/theme.json').then(r => r.json()),
     fetch('data/games.json').then(r => r.json())
   ]);
+  applyFavicon(branding.brand.logo.favicon);
   applyBranding(branding);
   applyTheme(theme);
   populateGames(games.games);
@@ -12,6 +13,17 @@ async function loadData() {
   setContact(branding.brand);
   setSocialLinks(branding.brand.socialMedia);
   setCountdown(games.countdownTarget);
+}
+
+// Dynamically set favicon
+function applyFavicon(faviconUrl) {
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.href = faviconUrl;
 }
 
 function applyBranding(branding) {
@@ -34,12 +46,21 @@ function setSocialLinks(social) {
   container.innerHTML = '';
   for (const [key, url] of Object.entries(social)) {
     const img = document.createElement('img');
-    img.src = `assets/icons/${key}.png`;
+    // Use fallback favicon for blog, else use icon from assets/icons
+    if (key === 'blog') {
+      img.src = 'https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/favicon-logo-with-name.png';
+    } else {
+      img.src = `assets/icons/${key}.png`;
+    }
     img.alt = key;
     img.title = key.charAt(0).toUpperCase() + key.slice(1);
+    img.style.width = '32px';
+    img.style.height = '32px';
+    img.style.borderRadius = '50%';
     const a = document.createElement('a');
     a.href = url;
     a.target = '_blank';
+    a.setAttribute('aria-label', key.charAt(0).toUpperCase() + key.slice(1));
     a.appendChild(img);
     container.appendChild(a);
   }
@@ -84,7 +105,9 @@ function setCountdown(target) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+
 // TODO: student exercise - Add search/filter for games
 // TODO: student exercise - Add dark mode toggle
+// TODO: student exercise - Add chatbot avatar from branding.json
 
 window.addEventListener('DOMContentLoaded', loadData);
